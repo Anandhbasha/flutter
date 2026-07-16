@@ -35,7 +35,31 @@ class StudentRegister extends StatelessWidget{
           TextField(controller: emailController,decoration: InputDecoration(labelText: "StudentEmail",hintText: "Enter your email",border: OutlineInputBorder()),),
           SizedBox(height: 20,),
           TextField(controller: phoneController,decoration: InputDecoration(labelText: "StudentMobile",hintText: "Enter your mobile Number",border: OutlineInputBorder()),),
-          SizedBox(height: 20,),
+          // SizedBox(height: 20,),
+          // TextField(
+          //   obscureText:true,
+          //   decoration: InputDecoration(labelText: "Password",hintText: "Enter your Password",border: OutlineInputBorder())
+          // ),
+          // SizedBox(height: 20,),
+          // Checkbox(value: false, onChanged: (value) {},),
+          // SizedBox(height: 20,),
+          // Radio(value: 0,groupValue: 1,onChanged: (value){},),
+          // SizedBox(height: 20,),
+          // Switch(value: false, onChanged: (value) {},),SizedBox(height: 20,),
+          // DropdownButton(value: "Java", items:[
+          //   DropdownMenuItem(value: "Java",child:Text("Java")),
+          //   DropdownMenuItem(value: "Python",child:Text("Python")),
+          //   DropdownMenuItem(value: "Flutter",child:Text("Flutter")),
+          // ] , onChanged: (value) {},),SizedBox(height: 20,),
+          Slider(value: 30, min:0,max: 100, onChanged:(value) {},),SizedBox(height: 20,),
+          // ElevatedButton(onPressed: () {
+          //   showDatePicker(context: context, firstDate: DateTime(2000), lastDate: DateTime(2026), initialDate: DateTime.now());
+          // }, child: Text("Pick Date")),
+          // SizedBox(height: 20,),
+          DataTable(columns: [DataColumn(label: Text("Sno")),DataColumn(label: Text("Name")),DataColumn(label: Text("Age"))] ,rows:[DataRow(cells: [
+            DataCell(Text("1")),DataCell(Text("Anandh")),DataCell(Text("33")),
+          ])
+          ,] ),
           SizedBox(
             width: double.infinity,
             height: 50,
