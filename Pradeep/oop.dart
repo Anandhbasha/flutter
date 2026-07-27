@@ -5,12 +5,13 @@ class Car{
   int carNofWheels = 4;
   int carTopSpeed = 190;
   int milage = 15;
-void acc(){
-  print("Car moves");
-}
-void breaks(){
-  print("Car Stops");
-}
+  // methods
+  void acc(){
+    print("Car moves");
+  }
+  void breaks(){
+    print("Car Stops");
+  }
 }
 void main(){
   Car c1 = Car();
