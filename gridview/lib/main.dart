@@ -16,7 +16,8 @@ class GridExample extends StatelessWidget{
       appBar: AppBar(
         title: Text("GridView"),
       ),
-      body:GridView.builder(itemCount: product.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,crossAxisSpacing: 10,mainAxisSpacing: 10),itemBuilder: (context, index) {
+      body:GridView.builder(
+        itemCount: product.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,crossAxisSpacing: 10,mainAxisSpacing: 10),itemBuilder: (context, index) {
         return Card(
           elevation: 5,
           child: Center(
