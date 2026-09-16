@@ -20,7 +20,8 @@ public class Bitwise {
         int a = 10;
         int b = 20;
         System.out.println(a&b);
-
+        System.out.println(((10*2)+(6-2)/2));
+        // BODMAS
         // 1111*2
         // 1*2^3 =8
         // 1*2^2 = 4
