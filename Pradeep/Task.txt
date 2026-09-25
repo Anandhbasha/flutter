@@ -1,0 +1,74 @@
+## Java – Class & Object + Loops Tasks
+
+### Class & Object – 8 Tasks
+
+1. **Student Details**
+   Create a `Student` class with `name`, `age`, and `mark`. Create objects and display the student details.
+
+2. **Employee Salary**
+   Create an `Employee` class with `name`, `id`, and `salary`. Create objects for 3 employees and display their details.
+
+3. **Bank Account**
+   Create a `BankAccount` class with `accountNumber`, `holderName`, and `balance`. Create an object and display the account details.
+
+4. **Product Details**
+   Create a `Product` class with `productName`, `price`, and `quantity`. Create objects for 3 products and display their total price.
+
+5. **Rectangle Area**
+   Create a `Rectangle` class with `length` and `breadth`. Create an object and calculate the area and perimeter.
+
+6. **Book Details**
+   Create a `Book` class with `title`, `author`, and `price`. Create objects for 3 books and display the book with the highest price.
+
+7. **Mobile Details**
+   Create a `Mobile` class with `brand`, `model`, and `price`. Create objects for 3 mobiles and display their details.
+
+8. **Electricity Bill**
+   Create an `ElectricityBill` class with `customerName`, `units`, and `amount`. Create an object and calculate the bill based on the number of units.
+
+---
+
+### While Loop – 3 Tasks
+
+1. **Reverse Number**
+   Write a Java program to get a number from the user and reverse the number using a `while` loop.
+
+2. **Armstrong Number**
+   Write a Java program to check whether a given number is an Armstrong number using a `while` loop.
+
+3. **Number Frequency**
+   Write a Java program to get a number and a digit from the user and count how many times that digit occurs in the number using a `while` loop.
+
+---
+
+### Do-While Loop – 3 Tasks
+
+1. **Menu Calculator**
+   Create a menu-driven calculator using a `do-while` loop. Allow the user to perform addition, subtraction, multiplication, and division repeatedly until they choose Exit.
+
+2. **ATM Menu**
+   Create an ATM menu using a `do-while` loop with options for Check Balance, Deposit, Withdraw, and Exit.
+
+3. **Number Guessing**
+   Create a number guessing program using a `do-while` loop. Continue asking the user to guess until the correct number is entered.
+
+---
+
+### For Loop – 3 Tasks
+
+1. **Prime Numbers**
+   Write a Java program to print all prime numbers between 1 and 100 using a `for` loop.
+
+2. **Pattern Printing**
+   Write a Java program to print the following pattern using nested `for` loops:
+
+   ```text
+   1
+   12
+   123
+   1234
+   12345
+   ```
+
+3. **Second Largest Number**
+   Write a Java program to get 10 numbers from the user and find the second largest number using a `for` loop.
