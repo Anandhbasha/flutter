@@ -84,3 +84,63 @@ if(temp>32){
 else{
     console.log("Switch on the fan");   
 }
+
+
+// let num = 5;
+// // ternary
+// // condition ? "true" : "False"
+
+// console.log(num%2==0 ?"Even":"Odd");
+
+
+// let courseName = "ffgh";
+
+// switch(courseName){
+//     case "Python":
+//         console.log("Choose the python course");
+//         break;
+//     case "Java":
+//         console.log("Choose the Java course");
+//         break; 
+//     case "Flutter":
+//         console.log("Choose the Flutter course");
+//         break;
+//     default:
+//         console.log("Choose the React course");   
+// }
+
+
+//loops
+//while
+// while(condition){}
+
+let a =10
+// while(a>=0){
+//     console.log(a);
+//     a--
+//     // 11
+// }
+// //do while
+// do{
+//     console.log("Do while");
+//     a--
+    
+// }while(a>=0)
+//for loop
+// for(variable;condition;in/de){}
+
+// 1*5 = 5
+// 2*5 = 10
+// 3*5 = 15
+
+
+let num = 1
+
+let multiple = 3
+
+while(num<=10){
+    // console.log(num + "*" + multiple + "=" + num*multiple);    
+    console.log(`num*${multiple}=${num*multiple}`);
+    
+    num++
+}
