@@ -177,12 +177,12 @@ let arr = [10,20,30,40]
 // console.log(total);
 
 // filter
-const three = arr.filter((x)=>x%3==0)
-// 10->1
-//20->2
-//30->0
-//40
-console.log(three);
+// const three = arr.filter((x)=>x%3==0)
+// // 10->1
+// //20->2
+// //30->0
+// //40
+// console.log(three);
 
 // push
 // pop
@@ -206,3 +206,101 @@ console.log(three);
 
 
 // async
+
+
+// console.log("Hello");
+// try{
+//     console.log(a)
+// }catch(err){
+//     console.log("Welcome to catch block");
+// }
+// console.log("Bye");
+
+
+
+//promise
+// const bookTicket = new Promise((resolved,reject)=>{
+//     let isBooked = true
+//     if(isBooked){
+//         resolved("Ticket booked successfully")
+//     }
+//     else{
+//         reject("Ticket booking failed")
+//     }
+// })
+
+// bookTicket.then((msg)=>{
+//     console.log(msg);
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+
+// const Player1 = new Promise((resolved,reject)=>{
+//     let isPlayer1Won = true
+//     if(isPlayer1Won){
+//         resolved("Player 1 won the match")
+//     }
+//     else{
+//         reject("Player 1 lost the match")
+//     }  
+// })
+
+// const Player2 = new Promise((resolved,reject)=>{
+//     let isPlayer2Won = true
+//     if(isPlayer2Won){
+//         resolved("Player 2 won the match")
+//     }
+//     else{
+//         reject("Player 2 lost the match")
+//     }  
+// })
+
+// const Player3 = new Promise((resolved,reject)=>{
+//     setTimeout(()=>{
+//         let isPlayer3Won = false 
+//     if(isPlayer3Won){
+//         resolved("Player 3 won the match")
+//     }else{
+//         reject("Player 3 lost the match")
+//     }  
+//     },5000)
+// })
+
+//any
+// Promise.any([Player1,Player2,Player3]).then((msg)=>{console.log(msg)}).catch((err)=>{console.log(err)})
+//race
+// Promise.race([Player1,Player2,Player3]).then((msg)=>{console.log(msg)}).catch((err)=>{console.log(err)})
+//all
+// Promise.all([Player1,Player2,Player3]).then((msg)=>{console.log(msg)}).catch((err)=>{console.log(err)})
+//allsettled
+// Promise.allSettled([Player1,Player2,Player3]).then((msg)=>{console.log(msg)}).catch((err)=>{console.log(err)})
+
+// const fetchProducts = new Promise((resolved,reject)=>{
+//     fetch("https://fakestoreapi.com/products").then((res)=>{
+//         if(res.ok){
+//             resolved(res.json())
+//         }
+//         else{
+//             reject("Error while fetching the products")
+//         }
+//     })
+// })
+
+// fetchProducts.then((data)=>{
+//     console.log(data);
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+const fetchData = async()=>{
+    const res = await fetch("https://fakestoreapi.com/products")
+    if(res.ok){
+        console.log(await res.json());        
+    }
+    else{
+        console.log("Error while fetching the products");   
+}
+}
+
+fetchData()
