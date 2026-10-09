@@ -9,13 +9,13 @@ class NewPhone{
 }
 class Gpay extends NewPhone{
     String showPassword(){
+        updatePassword("123456");
         return  password;
     }
 }
 public class protectedDemo {
     public static void main(String[] args) {
         Gpay pass = new Gpay();
-        pass.updatePassword("123456");
         System.out.println(pass.showPassword());;
 
     }
