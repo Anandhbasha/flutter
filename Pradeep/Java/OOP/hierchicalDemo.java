@@ -15,6 +15,6 @@ public class hierchicalDemo {
     public static void main(String[] args) {
         Principal p = new Principal();
         Staff s = new Staff();
-        Students s = new Students();
+        Students s1 = new Students();
     }
 }
