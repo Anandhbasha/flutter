@@ -1,3 +1,7 @@
+// npm install @react-navigation/native @react-navigation/native-stack
+// npx expo install react-native-screens react-native-safe-area-context
+// npm install @react-navigation/bottom-tabs
+// npx expo install @expo/vector-icons
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
