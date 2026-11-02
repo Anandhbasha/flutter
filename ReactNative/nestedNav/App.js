@@ -6,7 +6,7 @@ import Drawer from "./Navigation/Drawer"
   return(
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
-          <Drawer></Drawer>
+          <Drawer style={{display:"flex",flexDirector:"row-reverse"}}></Drawer>
       </NavigationContainer>
     </GestureHandlerRootView>
   )
