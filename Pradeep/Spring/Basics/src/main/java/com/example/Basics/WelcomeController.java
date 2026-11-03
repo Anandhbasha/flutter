@@ -23,4 +23,15 @@ public class WelcomeController {
         String Password = data.get("Password");
         return "Login Sucessfully " + userName;
     }
+    @PutMapping("update/{id}")
+    public String updateStudent(@PathVariable int id,@RequestBody Map<String,String> data){
+        String studentName = data.get("studentName");
+        String studentCourse = data.get("studentCourse");
+        return  "StudentId:" + id + " studentName:" + studentName + "studentCourse:" + studentCourse;
+    }
+
+    @DeleteMapping("del/{id}")
+    public String updateStudent(@PathVariable int id){
+        return  "StudentId:" + id + " Student is deleted sucessfully";
+    }
 }
