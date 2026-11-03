@@ -4,9 +4,11 @@ import Home from "../Screens/Home";
 import Search from "../Screens/Search";
 import Cart from "../Screens/Cart";
 import Profile from "../Screens/Profile";
+import { useShop } from "../Context/ShopContext";
 
 const Tab = createBottomTabNavigator()
 const TabNav = ()=>{
+    const {cartCount} = useShop();
     return(
         <Tab.Navigator screenOptions={({route})=>({
             headerShown:false,tabBarActiveTintColor:"skyblue",tabBarInactiveTintColor:"gray",tabBarIcon:
@@ -28,7 +30,7 @@ const TabNav = ()=>{
         })} >
             <Tab.Screen name="Home" component={Home}/>
             <Tab.Screen name="Search" component={Search}/>
-            <Tab.Screen name="Cart" component={Cart}/>
+            <Tab.Screen name="Cart" component={Cart} options={{tabBarBadge:cartCount>0?cartCount:0}}/>
             <Tab.Screen name="Profile" component={Profile}/>
 
         </Tab.Navigator>

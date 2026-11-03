@@ -1,4 +1,4 @@
-import React, { createContext,useContext,useState } from 'react'
+import React, { createContext,useContext,useEffect,useState } from 'react'
 import { View } from 'react-native'
 
 const ShopContextPro = createContext(null);
@@ -9,7 +9,9 @@ const ShopContext = ({children}) => {
   const [wishlist,setWishlist] = useState([]);
   const[loading,setLoding] = useState(true);
   const[error,setError] = useState("");
-  const fetchProducts = async()=>{
+  
+  useEffect(()=>{
+    const fetchProducts = async()=>{
     try{
       setLoding(true);
       setError("");
@@ -18,6 +20,8 @@ const ShopContext = ({children}) => {
         throw new Error("Something went wrong");
       }
       const data = await res.json();
+      setProducts(data)
+      
       if(!Array.isArray(data)){
         throw new Error("Invalid data format");
       }
@@ -27,7 +31,6 @@ const ShopContext = ({children}) => {
       setLoding(false);
     }
   }
-  useEffect(()=>{
     fetchProducts();
   },[])
 
@@ -48,13 +51,15 @@ const ShopContext = ({children}) => {
         item.id === id ? {...item,quantity:item.quantity+change}:item).filter((item)=>item.quantity>0)
     })
   }
+  console.log(products);
+  
   const toggleWishlist = (product)=>{
     setWishlist((prev)=>{
       const existingProduct = prev.some((item)=>item.id === product.id);
       return existingProduct ? prev.filter((item)=>item.id !== product.id):[...prev,product]})
-  const cartCount = cart.reduce((sum,item)=>sum+item.quantity,0);
-  const cartTotal = cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
     }
+    const cartCount = cart.reduce((sum,item)=>sum+item.quantity,0);
+    const cartTotal = cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
   return (
     <ShopContextPro.Provider value={{products,cart,wishlist,loading,error,addToCart,removeFromCart,updateQuantity,toggleWishlist,cartCount,cartTotal}}>{children}</ShopContextPro.Provider>
   )
