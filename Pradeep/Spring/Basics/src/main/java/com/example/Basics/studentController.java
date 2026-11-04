@@ -1,4 +1,5 @@
 package com.example.Basics;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -41,4 +42,23 @@ public class studentController {
         boolean removed = students.removeIf(s->s.getId()==id);
         return  removed?"Student Deleted sucessfully":"Student not found";
     }
+    @GetMapping("/details/{id}")
+    public ResponseEntity<?> getStudent(@PathVariable int id){
+        for(student s:students){
+            if (s.getId()==id){
+                return ResponseEntity.ok(s);
+//                status ->200
+            }
+        }
+        return  ResponseEntity.status(400).body("Student not found");
+    }
+    @GetMapping("/optional/{id}")
+    public ResponseEntity<?> findById(@PathVariable int id){
+        Optional <student> res = students.stream().filter(s->s.getId()==id).findFirst();
+        if(res.isPresent()){
+            return ResponseEntity.ok(res.get());
+        }
+        return ResponseEntity.status(404).body("Student nof found");
+    }
 }
+
