@@ -21,6 +21,8 @@ const ShopContext = ({children}) => {
       }
       const data = await res.json();
       setProducts(data)
+      console.log(res);
+      
       
       if(!Array.isArray(data)){
         throw new Error("Invalid data format");
