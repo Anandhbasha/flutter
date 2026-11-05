@@ -14,7 +14,7 @@ const Home = ()=>{
         <View>
             <Text style={Styles.heading}>Welcome to Shopping App</Text>
             <Text style={Styles.subHeading}>Explore Categories</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style= {Styles.categoryScroll}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={true} style= {Styles.categoryScroll}>
                 {cat.map((c)=>(
                     <View style= {Styles.catCard}>
                         <Text style={Styles.catText}>{c}</Text>
@@ -64,6 +64,9 @@ export default Home
 
 const Styles = StyleSheet.create(
     {
+        container:{
+            flex:1
+        },
       heading:{
         fontSize:24,
         fontWeight:"bold",
