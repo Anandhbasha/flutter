@@ -1,4 +1,17 @@
-const Settings = ()=>{
-    return("Settings")
-}
-export default Settings
+import React from "react";
+import { View, Text } from "react-native";
+
+const Settings = () => (
+  <View style={{
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }}>
+    <Text style={{ fontSize: 24 }}>
+      Settings ⚙️
+    </Text>
+  </View>
+);
+
+export default Settings;
+

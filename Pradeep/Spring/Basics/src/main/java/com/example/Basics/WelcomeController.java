@@ -34,4 +34,5 @@ public class WelcomeController {
     public String updateStudent(@PathVariable int id){
         return  "StudentId:" + id + " Student is deleted sucessfully";
     }
+
 }
