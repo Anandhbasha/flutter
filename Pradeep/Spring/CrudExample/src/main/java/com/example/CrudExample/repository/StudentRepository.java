@@ -1,44 +1,70 @@
+
 package com.example.CrudExample.repository;
 
 import com.example.CrudExample.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
-import java.util.List;
-import java.util.Optional;
 
+@Repository
 public class StudentRepository {
+
     private final List<Student> students = new ArrayList<>();
 
-//    POST
-    public Student save(Student student){
+    // POST - Save
+    public Student save(Student student) {
         students.add(student);
         return student;
     }
-//    Read
-    public  List<Student>findAll(){
-        return new ArrayList<Student>();
+
+    // GET - Find All
+    public List<Student> findAll() {
+        return new ArrayList<>(students);
     }
-    public Optional<Student> findById(int id){
-        return  students.stream().filter(s->s.getId()).findFirst();
+
+    // GET - Find By ID
+    public Optional<Student> findById(int id) {
+        return students.stream()
+                .filter(s -> s.getId() == id)
+                .findFirst();
     }
-//    update
-    public Student update(Student student){
-        return  student;
+
+    // UPDATE
+    public Student update(Student student) {
+        Optional<Student> existing = findById(student.getId());
+
+        if (existing.isPresent()) {
+            Student oldStudent = existing.get();
+            oldStudent.setName(student.getName());
+            oldStudent.setCourse(student.getCourse());
+            return oldStudent;
+        }
+
+        return null;
     }
-//    del
-    public  boolean deleteById(int id){
-        return students.removeIf(s->s.getId()==id);
+
+    // DELETE
+    public boolean deleteById(int id) {
+        return students.removeIf(s -> s.getId() == id);
     }
-//    Search by course
-    public List<Student>findByCourse(final String course){
-        return  students.stream().filter(s->s.getCourse().equalsIgnoreCase(course)).toList();
+
+    // Search by Course
+    public List<Student> findByCourse(String course) {
+        return students.stream()
+                .filter(s -> s.getCourse().equalsIgnoreCase(course))
+                .toList();
     }
-    public List<Student>findByName(final String name){
-        return  students.stream().filter(s->s.getName().toLowerCase().contains(name.toLowerCase())).toList();
+
+    // Search by Name
+    public List<Student> findByName(String name) {
+        return students.stream()
+                .filter(s -> s.getName().toLowerCase()
+                        .contains(name.toLowerCase()))
+                .toList();
     }
-//    count
-    public int countStudents(){
-        return  students.size();
+
+    // Count
+    public int countStudents() {
+        return students.size();
     }
 }
-

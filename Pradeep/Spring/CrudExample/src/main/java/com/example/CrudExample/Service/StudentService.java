@@ -5,6 +5,7 @@ import com.example.CrudExample.repository.StudentRepository;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
@@ -63,13 +64,18 @@ public class StudentService {
         return repo.deleteById(id);
     }
 //    Search
-    public List<Student>searchByName(String name){
+// Search by Name
+    public List<Student> searchByName(String name) {
         return repo.findByName(name);
     }
-    public List<Student>sefindByCourse(String course){
+
+    // Search by Course
+    public List<Student> searchByCourse(String course) {
         return repo.findByCourse(course);
     }
-    public int countStudents(){
+
+    // Count Students
+    public int countStudents() {
         return repo.countStudents();
     }
 }
