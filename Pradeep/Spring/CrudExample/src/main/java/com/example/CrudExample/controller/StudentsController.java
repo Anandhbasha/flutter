@@ -78,7 +78,7 @@ public class StudentsController {
 
     // COUNT
     @GetMapping("/count")
-    public int countStudents() {
+    public long countStudents() {
         return ser.countStudents();
     }
 

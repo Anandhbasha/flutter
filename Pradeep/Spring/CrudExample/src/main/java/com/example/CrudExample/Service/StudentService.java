@@ -29,9 +29,6 @@ public class StudentService {
     }
     public Student addStudent(Student stu){
         validateStudent(stu);
-        if(repo.findById(stu.getId()).isPresent()){
-            throw new IllegalArgumentException(("Student ID Already exist"));
-        }
         return repo.save(stu);
     }
     public List<Student> getAllStudents(){
@@ -55,27 +52,28 @@ public class StudentService {
            Student student = existing.get();
            student.setName((updateStudent.getName()));
             student.setCourse((updateStudent.getCourse()));
-            return Optional.of(repo.update(student));
+            return Optional.of(repo.save(student));
         }
         return  Optional.empty();
     }
 //    Delete
     public boolean deleteStudent(int id) {
-        return repo.deleteById(id);
+        if(!repo.existsById(id));
+        return  false;
     }
 //    Search
 // Search by Name
     public List<Student> searchByName(String name) {
-        return repo.findByName(name);
+        return repo.findByNameIgnoreCase(name);
     }
 
     // Search by Course
     public List<Student> searchByCourse(String course) {
-        return repo.findByCourse(course);
+        return repo.findByCourseIgnoreCase(course);
     }
 
     // Count Students
-    public int countStudents() {
-        return repo.countStudents();
+    public long countStudents() {
+        return repo.count();
     }
 }

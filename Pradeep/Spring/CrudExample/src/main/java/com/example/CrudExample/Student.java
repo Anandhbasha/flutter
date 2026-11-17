@@ -1,10 +1,16 @@
 package com.example.CrudExample;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="students")
 public class Student {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String name;
     private String course;
-    public  Student(){
+    public Student(){
 
     }
     public  Student(int id,String name,String Course){
