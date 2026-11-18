@@ -11,9 +11,13 @@ import {
 
 import { useShop } from "../Context/ShopContext";
 import ProductCard from "../Components/ProductCard";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "react-native";
+import { addCount } from "../Slice/Slice";
 
 const Home = () => {
-
+  const countsNew = useSelector((state)=>state.counts.count)
+  const dispatch = useDispatch()
   const {
     products,
     loading,
@@ -30,7 +34,8 @@ const Home = () => {
 
   const renderHeader = () => (
     <View>
-
+      <Text>{countsNew}</Text>
+      <Button onPress={()=>dispatch(addCount(1))} title="AddCount"></Button>
       <Text style={styles.heading}>
         Welcome to Shopping App 🛍️
       </Text>
